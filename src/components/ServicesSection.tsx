@@ -23,10 +23,10 @@ const SERVICES_DATA: ServiceItem[] = [
   {
     id: 'recargas',
     title: 'RECARGAS',
-    category: '📱 MÓVIL & JUEGOS',
+    category: '📱 MOVIL & JUEGOS',
     icon: <Smartphone className="w-5 h-5" />,
     actionText: 'RECARGAR →',
-    tag: 'INSTANTÁNEO',
+    tag: 'INSTANTANEO',
     description: 'Recargas electrónicas de saldo y combos para todas las operadoras y videojuegos.',
     url: 'https://www.tecnoicymi.com/proyectos/recargasMoviles',
     items: [
@@ -53,11 +53,11 @@ const SERVICES_DATA: ServiceItem[] = [
   },
   {
     id: 'cafe',
-    title: 'INVÍTAME UN CAFÉ',
+    title: 'INVITAME UN CAFE',
     category: '☕ COMUNIDAD TECNOICYMI',
     icon: <Coffee className="w-5 h-5" />,
-    actionText: 'INVITAR CAFÉ →',
-    tag: 'DONACIÓN',
+    actionText: 'INVITAR CAFE →',
+    tag: 'DONACION',
     description: 'Apoya el desarrollo de juegos retro minimalistas y proyectos libres de TECNOICYMI.',
     url: 'https://www.paypal.com/ncp/payment/2FS8SD7C4H8CE',
     items: [
@@ -123,7 +123,7 @@ export const ServicesSection: React.FC = () => {
           ▼ DESCUBRE TECNOICYMI ▼
         </h2>
         <p className="text-xs font-pixel text-[#777777]">
-          SERVICIOS DIGITALES & SOLUCIONES TECNOLÓGICAS
+          SERVICIOS DIGITALES & SOLUCIONES TECNOLOGICAS
         </p>
       </div>
 
