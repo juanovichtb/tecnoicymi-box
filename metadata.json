@@ -1,0 +1,6 @@
+{
+  "name": "TECNOICYMI Boxeo",
+  "description": "Juego de boxeo minimalista pixel art, combate en tiempo real y servicios integrados.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
