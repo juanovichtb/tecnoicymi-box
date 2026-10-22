@@ -41,3 +41,60 @@
   background: #535353;
 }
 
+/* Eye-Catching Header CTA Animations */
+@keyframes arcadePulse {
+  0%, 100% {
+    transform: translateY(0);
+    box-shadow: 2px 2px 0px 0px #535353;
+  }
+  50% {
+    transform: translateY(-2px);
+    box-shadow: 2px 4px 0px 0px #c93b2b;
+  }
+}
+
+@keyframes shineSweep {
+  0% {
+    left: -80%;
+  }
+  20%, 100% {
+    left: 150%;
+  }
+}
+
+.arcade-cta-btn {
+  animation: arcadePulse 3s ease-in-out infinite;
+}
+
+.arcade-cta-btn:hover {
+  animation: none;
+  transform: translateY(-1px);
+}
+
+.arcade-cta-btn:active {
+  transform: translateY(1px) translateX(1px);
+}
+
+.shine-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.shine-effect::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -80%;
+  width: 50%;
+  height: 200%;
+  background: linear-gradient(
+    60deg,
+    rgba(255, 255, 255, 0) 10%,
+    rgba(255, 255, 255, 0.35) 50%,
+    rgba(255, 255, 255, 0) 90%
+  );
+  transform: rotate(25deg);
+  animation: shineSweep 4.5s ease-in-out infinite;
+  pointer-events: none;
+}
+

@@ -679,8 +679,18 @@ class AudioManager {
     }
   }
 
+  // Sound toggle alias
+  public toggleSound(): boolean {
+    return this.toggleMaster();
+  }
+
   // Play beep compatibility alias
-  public playBeep(freq: number = 440, duration: number = 0.05) {
+  public playBeep(
+    freq: number = 440,
+    duration: number = 0.05,
+    type: OscillatorType = 'square',
+    volume: number = 0.15
+  ) {
     if (!this.masterEnabled || !this.sfxEnabled) return;
     const ctx = this.initCtx();
     if (!ctx) return;
@@ -688,9 +698,9 @@ class AudioManager {
       const now = ctx.currentTime;
       const osc = ctx.createOscillator();
       const gain = ctx.createGain();
-      osc.type = 'square';
+      osc.type = type;
       osc.frequency.setValueAtTime(freq, now);
-      gain.gain.setValueAtTime(0.15, now);
+      gain.gain.setValueAtTime(volume, now);
       gain.gain.exponentialRampToValueAtTime(0.001, now + duration);
       osc.connect(gain);
       gain.connect(ctx.destination);

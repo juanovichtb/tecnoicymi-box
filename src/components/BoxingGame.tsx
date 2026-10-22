@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState, useCallback } from 'react';
-import { Volume2, VolumeX, RotateCcw, Play } from 'lucide-react';
+import { Volume2, VolumeX, RotateCcw, Play, ExternalLink } from 'lucide-react';
 import { Fighter, Particle, Cloud, Spectator, MatchStatus } from '../types';
 import { audio } from '../utils/audio';
 import {
@@ -1078,12 +1078,41 @@ export const BoxingGame: React.FC = () => {
 
   return (
     <div className="w-full flex flex-col items-center select-none">
-      {/* 1. Ultra-Minimal Dino Top Bar (Score + Round + Timer + Audio) */}
-      <div className="w-full max-w-4xl px-4 py-2 flex flex-wrap items-center justify-between gap-2 text-xs font-pixel text-[#535353] border-b border-[#e0e0e0]">
-        {/* Brand / Logo */}
-        <div className="flex items-center gap-2">
-          <span className="font-bold text-[#222222] tracking-wider">TECNOICYMI</span>
-          <span className="text-[10px] text-[#777777] hidden sm:inline">BOXEO</span>
+      {/* 1. Header Dino Top Bar (Score + Round + Timer + Audio + Web Link) */}
+      <header className="w-full max-w-4xl px-4 py-2 flex flex-wrap items-center justify-between gap-2.5 text-xs font-pixel text-[#535353] border-b border-[#e0e0e0]">
+        {/* Brand / Logo + Irresistible Website CTA Button */}
+        <div className="flex items-center gap-2.5 sm:gap-3 flex-wrap">
+          <div className="flex items-center gap-1.5">
+            <span className="font-bold text-[#222222] tracking-wider">TECNOICYMI</span>
+            <span className="text-[10px] text-[#777777] hidden md:inline">BOXEO</span>
+          </div>
+
+          {/* Attention-Grabbing Official Website CTA Button */}
+          <a
+            href="https://www.tecnoicymi.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => audio.playMilestone()}
+            title="Visitar sitio oficial www.tecnoicymi.com"
+            className="arcade-cta-btn shine-effect group inline-flex items-center gap-1.5 sm:gap-2 px-2.5 py-1 bg-[#1a1a1a] hover:bg-[#000000] text-[#f7f7f7] font-pixel text-[10px] border-2 border-[#222222] hover:border-[#c93b2b] shadow-[2px_2px_0px_0px_#535353] hover:shadow-[3px_3px_0px_0px_#c93b2b] transition-all cursor-pointer select-none active:scale-95"
+          >
+            {/* Live Pulsing Radar Beacon */}
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#ff3333]"></span>
+            </span>
+
+            {/* Glowing Domain Name */}
+            <span className="text-amber-300 group-hover:text-amber-200 font-bold tracking-tight text-[10px] transition-colors">
+              TECNOICYMI.COM
+            </span>
+
+            {/* Retro Action Badge with Animated Jump Arrow */}
+            <span className="bg-[#c93b2b] group-hover:bg-[#e74c3c] text-white text-[9px] px-1.5 py-0.5 font-bold tracking-wider flex items-center gap-1 rounded-[1px] transition-transform group-hover:scale-105">
+              <span>VISITAR</span>
+              <ExternalLink className="w-2.5 h-2.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            </span>
+          </a>
         </div>
 
         {/* Round & Timer */}
@@ -1110,7 +1139,7 @@ export const BoxingGame: React.FC = () => {
             {soundEnabled ? <Volume2 className="w-4 h-4" /> : <VolumeX className="w-4 h-4 text-red-500" />}
           </button>
         </div>
-      </div>
+      </header>
 
       {/* 2. Fighter Health Segmented Indicators (Minimalist Dino Style) */}
       <div className="w-full max-w-4xl px-4 pt-2 flex items-center justify-between text-[11px] font-pixel">
